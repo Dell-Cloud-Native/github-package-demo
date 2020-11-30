@@ -29,9 +29,9 @@ jobs:
             ls -R
             pwd
             docker login https://docker.pkg.github.com -u ${{ github.actor }} -p  ${{ secrets.GITHUB_TOKEN }}
-            docker build -f Dockerfile.grdl -t docker.pkg.github.com/Dell-Cloud-Native/github-package-demo/spring-rest-demo:1.0 .
+            docker build -f Dockerfile.grdl -t docker.pkg.github.com/dell-cloud-native/github-package-demo/spring-rest-demo:1.0 .
             docker images  
-            docker push docker.pkg.github.com/Dell-Cloud-Native/github-package-demo/spring-rest-demo:1.0
+            docker push docker.pkg.github.com/dell-cloud-native/github-package-demo/spring-rest-demo:1.0
       - name: build-docker-image
         uses: docker/build-push-action@v2
         with:
@@ -39,5 +39,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: Dell-Cloud-Native/github-package-demo/spring-rest-demo
+          repository: dell-cloud-native/github-package-demo/spring-rest-demo
           tag_with_ref: true
